@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ $title }}</title>
+</head>
+<body>
+
+<h1>Contact Us</h1>
+
+<p>Welcome to the Contact page.</p>
+
+<a href="/">Back Home</a>
+
+</body>
+</html>
