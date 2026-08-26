@@ -39,6 +39,28 @@ Set `DB_CONNECTION` and the related database variables in `.env` before running 
 php artisan test
 ```
 
+## Render deployment
+
+Create a PostgreSQL database and a Docker web service connected to this repository. Use the `main` branch and set these web-service environment variables:
+
+```text
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://your-render-service.onrender.com
+APP_KEY=<generate locally with php artisan key:generate --show>
+LOG_CHANNEL=stderr
+SESSION_DRIVER=file
+CACHE_STORE=file
+DB_CONNECTION=pgsql
+DB_HOST=<database internal hostname>
+DB_PORT=5432
+DB_DATABASE=<database name>
+DB_USERNAME=<database user>
+DB_PASSWORD=<database password>
+```
+
+The Docker image builds the frontend assets, runs migrations, caches Laravel configuration, and serves the application through Apache.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
